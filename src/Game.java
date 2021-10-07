@@ -6,30 +6,32 @@ public class Game
 
     public static void main(String[] args)
     {
-        // Do I need to make another type of override for the child classes?
-        // Need to loop the 'if' statements so the Tamagotchi can do multiple actions.
-        // Need to draw a class diagram of all your classes and create a sequence diagram of one specific use case.
-                
 
         Scanner sc = new Scanner(System.in);
 
-
+        //The user pick either a cat or a dog and name it.
         System.out.println("You need to pick a Tamagotchi. Please press 1 for cat and 2 for dog");
         int tamagotchiChoice = sc.nextInt();
         System.out.println("Please type in a name for your Tamagotchi");
         String extraLine = sc.nextLine();
         String tamagotchiName = sc.nextLine();
 
+        //3 random numbers are created to generate random stats for the Tamagotchi-
         int statOne = randomNumber();
         int statTwo = randomNumber();
         int statThree = randomNumber();
+
+        //The boolean is created to make the game keep running. This way you can keep playing/feeding/letting your Tamagotchi nap.
         boolean run = true;
 
+            //Cat with user input name is createdd with random stats.
             if (tamagotchiChoice == 1) {
                 Cat pet1 = new Cat(tamagotchiName, statOne, statTwo, statThree, true);
                 System.out.println("You have picked " + pet1 + "\n10 mood means your pet is having lots of fun\n10 hunger means your pet is full\n10 energy means your pet has very much energy");
                 System.out.println("Do you want to: \nPlay with " + tamagotchiName + " - press 1\nFeed " + tamagotchiName + " - press 2\nLet " + tamagotchiName + " take a nap - press 3");
 
+                //The while loop works together with boolean = true to make the game run as long as the boolean is true.
+                //Early models of the Tamagotchi can not die of old age, so you can continue playing with it.
                 while (run == true) {
                     int firstChoice = sc.nextInt();
 

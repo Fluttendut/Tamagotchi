@@ -1,6 +1,7 @@
 public class Cat extends Tamagotchi
 {
 
+    //unique boolean that tells that cat Tamagotchi's like to push stuff off the table.
     public boolean likesToPushStuffOffTheTable = true;
 
     public Cat(String name, int hunger, int mood, int energy, boolean likesToPushStuffOffTheTable)
@@ -9,6 +10,7 @@ public class Cat extends Tamagotchi
         this.likesToPushStuffOffTheTable = likesToPushStuffOffTheTable;
     }
 
+    //Override that lets the animal say meow.
     @Override
     public String animalSays()
     {
@@ -16,6 +18,7 @@ public class Cat extends Tamagotchi
     }
 
 
+    //Override that lets me give the stats to the user when printing in my game main.
     @Override
     public String toString()
     {
